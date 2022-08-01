@@ -1,0 +1,13 @@
+name: Optic CI build check
+
+on: [ push, workflow_dispatch ]
+
+jobs:
+  optic-ci:
+    name: Build Optic-ci template
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Optic cli
+        run: yarn install && yarn build
